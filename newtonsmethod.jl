@@ -1,5 +1,5 @@
 setprecision(500; base=10)
-f(z::Number) = exp(z)-2
+f(z::Number) = z^2-z-1
 deriv(f::Function, h::Real = 1e-12) = x -> (f(x+h)-f(x))/h
 iterate(f::Function, s::Number, h::Real = 1e-12) = s - f(s)/deriv(f, h)(s)
 seed = big(2)
