@@ -1,9 +1,14 @@
-setprecision(500; base=10)
+setprecision(510; base=10)
 z = big(1.)
 x = big(1.)
+i = 2
+prev = Inf
 
-for i ∈ 2:10_000
+while true
     global z += 1/x
     global x *= i
-    println(z)
+    if (i%100 == 0) println(z) end
+    if (z == prev) println(z); break end
+    global i += 1
+    global prev = z
 end
